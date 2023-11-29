@@ -49,12 +49,42 @@ font-family: 'Cedarville Cursive', cursive;
     
     
 }
-#nav-bar ul li a:hover{
-    color: red;
-    text-shadow: #ffffff;
-    
-    
+#nav-bar ul li a{
+    padding:10px;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 15rem; */
+    /* height: 2rem; */
+    background-color: black;
+    border: 0.2rem solid black;
+    border-radius: 0.8rem;
+    /* font-size: 1.8rem; */
+    /* font-weight: 600; */
+    /* letter-spacing: 0.1rem; */
+    color: white;
+    z-index: 1;
+    overflow: hidden;  
 }
+#nav-bar ul li a:hover{
+  color: red;
+}
+#nav-bar ul li a::before{
+    content:'' ;
+    position:absolute ;
+    top: 0;
+    left:0 ;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: 0.5s;
+} 
+
+#nav-bar ul li a:hover:before{
+    width: 100%;
+    }
 @media (max-width: 650px) {
 
     *{
@@ -114,5 +144,11 @@ font-family: 'Cedarville Cursive', cursive;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    #nav-bar ul li a:hover{
+       color: blueviolet;
+        
+        
+        
     }
 }
